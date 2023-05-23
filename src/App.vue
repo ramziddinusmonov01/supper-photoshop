@@ -760,7 +760,9 @@ function backgrounsClose() {
   modal.classList.remove('modal-nav--show')
   backgroundlinear.classList.remove('background-linear--show')
   registerModal.classList.remove('register-modal--show')
+  
 }
+
 
 
 
