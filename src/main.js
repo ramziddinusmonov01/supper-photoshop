@@ -1,3 +1,5 @@
+import 'swiper/css/pagination';
+import 'swiper/css';
 import './assets/css/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
