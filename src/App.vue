@@ -547,8 +547,7 @@
             </div>
           </li>
         </ul>
-        <swiper class="media-list comments-list" :slides-per-view="1" :space-between="50" @swiper="onSwiper"
-          @slideChange="onSlideChange" :pagination="{ clickable: true }" :modules="modules">
+        <swiper class="media-list " :slides-per-view="1" :space-between="50" :pagination="{ clickable: true }" :modules="modules">
           <swiper-slide class="comments-list__item">
             <img class="comments-item__img" src="@/assets/images/Djanibek-Amanbaev.svg" alt="img">
             <div class="comments-item__info">

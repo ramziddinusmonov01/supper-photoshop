@@ -877,8 +877,7 @@ body{
     color: var(--dark-color);
 }
 .media-list{
-    opacity: 0;
-    pointer-events:visible;
+    display: none;
 
 }
 
@@ -1209,6 +1208,9 @@ body{
     max-width: 1124px;
     margin: 0 auto;
 }
+.media-list{
+    display: none;
+}
 .comments-list__item {
     width: 100%;
     max-width: 550px;
@@ -1343,6 +1345,9 @@ body{
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
+}
+.media-list{
+    display: none;
 }
 .comments-list__item {
     width: 100%;
@@ -1565,6 +1570,9 @@ body{
     width: 100%;
     max-width: 924px;
     margin: 0 auto;
+}
+.media-list{
+    display: none;
 }
 .comments-list__item {
     width: 100%;
@@ -1877,6 +1885,9 @@ body{
     gap: 24px;
     align-items: center;
     justify-content: center;
+}
+.media-list{
+    display: none;
 }
 
   /* AUTHOR STYLES */
@@ -2631,9 +2642,9 @@ body{
         display: none;
     }
     .media-list{
-        opacity: 1;
-    
+        display: flex;
     }
+  
     .sardorQodirov{
         width: 380px;
         height: 200px;
@@ -2918,7 +2929,6 @@ body{
 @media(max-width:415px){
     .social-network__list{
         width: 330px;
-        margin-left: -20px;
     }
     .sardorQodirov{
         width: 324px;
@@ -3003,7 +3013,6 @@ body{
    
      .social-network__list{
         width: 330px;
-        margin-left: -30px;
     } 
     /* PRICES STYLES */
     .prices{
