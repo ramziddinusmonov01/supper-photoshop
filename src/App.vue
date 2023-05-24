@@ -1,40 +1,41 @@
 <template>
   <div>
     <!-- NAVIGATION -->
-    <nav class="nav">
-      <div class="nav-container">
-        <a href="#">
-          <img class="nav-logo" src="@/assets/images/logo.svg" alt="logo">
-        </a>
-        <div class="nav-modal-options">
-          <ul class="nav-menu">
-            <li class="nav-menu__item">
-              <a class="nav-item__link" href="#mavzular">Mavzular</a>
-            </li>
-            <li class="nav-menu__item">
-              <a class="nav-item__link" href="#bonus">Bonus</a>
-            </li>
-            <li class="nav-menu__item">
-              <a class="nav-item__link" href="#muallifHaqida">Muallif haqida</a>
-            </li>
-            <li class="nav-menu__item">
-              <a class="nav-item__link" href="#OquvchilarFikri">O‘quvchilar fikri</a>
-            </li>
-            <li class="nav-menu__item">
-              <a class="nav-item__link" href="#narx">Narx</a>
-            </li>
-          </ul>
-          <a class="nav-connection" href="#bizgaBoglanish">Bog‘lanish</a>
-        </div>
-        <div class="nav-modal__btn" @click="modalOpen">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </nav>
+    
+        <nav class="nav">
+          <div class="nav-container">
+            <a href="#">
+              <img class="nav-logo" src="@/assets/images/logo.svg" alt="logo">
+            </a>
+            <div class="nav-modal-options">
+              <ul class="nav-menu">
+                <li class="nav-menu__item">
+                  <a class="nav-item__link" href="#mavzular">Mavzular</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-item__link" href="#bonus">Bonus</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-item__link" href="#muallifHaqida">Muallif haqida</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-item__link" href="#OquvchilarFikri">O‘quvchilar fikri</a>
+                </li>
+                <li class="nav-menu__item">
+                  <a class="nav-item__link" href="#narx">Narx</a>
+                </li>
+              </ul>
+              <a class="nav-connection" href="#bizgaBoglanish">Bog‘lanish</a>
+            </div>
+            <div class="nav-modal__btn" @click="modalOpen">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </nav>
+      
     <!-- NAVIGATION END -->
-
     <!-- MODALNAV -->
     <div class="modal-nav">
       <div class="modal-nav__header">
@@ -701,7 +702,7 @@ let inputNumber = ref("")
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 const modules = [Pagination]
 
 // NAVIGATION FIXED
@@ -709,6 +710,7 @@ window.addEventListener('scroll', () => {
   const nav = document.querySelector('.nav');
   nav.classList.toggle("fixedNav", window.scrollY > 0)
 })
+
 
 // MODAL NAV OPEN
 

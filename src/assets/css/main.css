@@ -37,6 +37,9 @@ body{
     max-width: 1896px;
     padding: 0 20px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* NAVIGATION STYLES */
@@ -47,18 +50,13 @@ body{
     transition: 0.2s linear;
 }
 .fixedNav{
-    position: fixed;
-    top: 0;
+    position: sticky;
+    top: 0px;
     left: 0;
     width: 100%;
     z-index: 20;
 }
-.nav .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-}
 .nav-logo {
     display: flex;
     width: 200px;
@@ -2001,6 +1999,9 @@ body{
 }
 }
 @media(max-width:913px){
+    .container{
+        padding: 0 18px;
+    }
 
     .sardorQodirov{
         width: 697px;
@@ -2145,12 +2146,16 @@ body{
 @media(max-width:899px){
     .nav {
         width: 100%;
-        max-width: 800px;
+        max-width: 863px;
         padding: 12px 0;
         border-radius: 50px;
         margin: 0 auto;
         margin-top: 50px;
     }
+    .fixedNav{
+        top: 50px;
+    }
+    
     .nav-container{
         justify-content: space-between;
     }
@@ -2164,38 +2169,54 @@ body{
         width: 697px;
         height: 500px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
+
+
+}
+@media(max-width:890px){
+    .nav {
         width: 100%;
-        max-width: 899px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius:0;
+        max-width: 820px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+}
+@media(max-width:839px){
+    .nav {
+        width: 100%;
+        max-width: 800px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
 }
 @media(max-width:817px){
-    .nav{
+    .nav {
         width: 100%;
-        max-width: 700px;
+        max-width: 727px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
+  
     .sardorQodirov{
         width: 697px;
         height: 500px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 817px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius:0;
-    }
+ 
 }
 @media(max-width:787px){
+    .nav {
+        width: 100%;
+        max-width:750px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
     .videoTutorial-info__title {
         font-size: 40px;
         line-height: 59px;
@@ -2213,38 +2234,42 @@ body{
         width: 100%;
         height: 100%;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
+  
+}
+@media(max-width:780px){
+    .nav {
         width: 100%;
-        max-width: 787px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius:0;
+        max-width:700px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
 }
 @media(max-width:717px){
-    .nav{
+    .nav {
         width: 100%;
-        max-width: 600px;
+        max-width: 620px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
     .sardorQodirov{
         width: 540px;
         height: 300px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 717px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius:0;
-    }
+
 }
 @media(max-width:713px){
+    .nav {
+        width: 100%;
+        max-width:600px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
     .social-network__list {
         display: flex;
         align-items: center;
@@ -2288,18 +2313,27 @@ body{
         width: 540px;
         height: 300px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
+
+}
+@media(max-width:690px){
+    .nav {
         width: 100%;
-        max-width: 713px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius:0;
+        max-width:580px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
 }
 @media(max-width:650px){
+    .nav {
+        width: 100%;
+        max-width:550px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
     .connection-btns {
         display: flex;
         align-items: center;
@@ -2310,15 +2344,16 @@ body{
         width: 540px;
         height: 300px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
+
+}
+@media(max-width:639px){
+    .nav {
         width: 100%;
-        max-width: 650px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius:0;
+        max-width:540px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
 }
 @media(max-width:630px){
@@ -2334,48 +2369,16 @@ body{
         width: 540px;
         height: 300px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 630px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius:0;
-    }
+
 }
 @media(max-width:617px){
-    .nav{
-        width: 100%;
-        max-width: 500px;
-    }
     .sardorQodirov{
         width: 400px;
         height: 230px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 617px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
+
 }
 @media(max-width:610px){
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width:610px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
     /* BONUS STYLES */
     .bonus-info__img {
         display: flex;
@@ -2408,16 +2411,6 @@ body{
     }
 }
 @media(max-width:609px){
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 609px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
     .sardorQodirov{
         width: 400px;
         height: 230px;
@@ -2461,16 +2454,24 @@ body{
     
   
 }
-@media(max-width:578px){
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
+@media(max-width:600px){
+    .nav {
         width: 100%;
-        max-width: 578px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
+        max-width:540px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+}
+@media(max-width:578px){
+    .nav {
+        width: 100%;
+        max-width:520px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
    /* VIDEOtUTORIAL STYLES */
    .videoTutorial-info {
@@ -2531,15 +2532,13 @@ body{
       }
 }
 @media(max-width:540px){
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
+    .nav {
         width: 100%;
-        max-width: 540px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
+        max-width:500px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
     .sardorQodirov{
         width: 400px;
@@ -2639,48 +2638,31 @@ body{
         width: 380px;
         height: 200px;
     }
-        .fixedNav{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            max-width: 530px;
-            z-index: 20;
-            margin-top: 0;
-            border-radius: 0;
-        }
     
 }
 @media(max-width:517px){
-    .nav{
+    .nav {
         width: 100%;
-        max-width: 400px;
+        max-width:480px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
+ 
     .sardorQodirov{
         width: 380px;
         height: 200px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 517px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
 }
 @media(max-width:499px){
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
+    .nav {
         width: 100%;
-        max-width: 499px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
+        max-width:450px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
     /* VIDEOTUTORIAL STYLES */
     .videoTutorial{
@@ -2723,17 +2705,18 @@ body{
         margin-left: 20px;
       }
 }
-@media(max-width:470px){
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
+@media(max-width:490px){
+    .nav {
         width: 100%;
-        max-width: 470px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
+        max-width:420px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
+}
+@media(max-width:470px){
+ 
     .videoTutorial-info__connection {
         display: none;
         align-items: center;
@@ -2768,15 +2751,13 @@ body{
     }
 }
 @media(max-width:448px){
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
+    .nav {
         width: 100%;
-        max-width: 448px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
+        max-width: 347px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
     }
     .videoTutorial-info {
         display: flex;
@@ -2858,15 +2839,7 @@ body{
         object-fit: cover;
         border-radius: 10px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 331px;
-        z-index: 20;
-        border-radius: 0;
-    }
+  
 }
 @media(max-width:428px){
    
@@ -2874,16 +2847,7 @@ body{
         font-size: 16px;
         line-height: 19px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 428px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
+ 
 }
 @media(max-width:420px){
     .sardorQodirov{
@@ -2947,16 +2911,7 @@ body{
     margin: 0 auto;
     margin-top: 80px;
 }
-.fixedNav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-width: 420px;
-    z-index: 20;
-    margin-top: 0;
-    border-radius: 0;
-}
+
 
 
 }
@@ -2969,16 +2924,7 @@ body{
         width: 324px;
         height: 190px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 415px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
+
 }
 @media(max-width:410px){
     
@@ -2994,16 +2940,7 @@ body{
         width: 324px;
         height: 190px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 410px;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
+ 
 }
 @media(max-width:400px){
     .topics-item__images{
@@ -3033,17 +2970,8 @@ body{
     .sardorQodirov{
         width: 324px;
         height: 190px;
-        margin-left:-30px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
+
 
 }
 @media(max-width:388px){
@@ -3058,17 +2986,8 @@ body{
     .sardorQodirov{
         width: 324px;
         height: 190px;
-        margin-left:-30px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
+
 }
 @media(max-width:385px){
     .prices{
@@ -3077,28 +2996,11 @@ body{
     .sardorQodirov{
         width: 324px;
         height: 190px;
-        margin-left:-30px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
+   
 }
 @media(max-width:375px){
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
+   
      .social-network__list{
         width: 330px;
         margin-left: -30px;
@@ -3128,7 +3030,6 @@ body{
     .sardorQodirov{
         width: 324px;
         height: 190px;
-        margin-left:-30px;
     }
     .bonus-info {
         padding: 10px;
@@ -3136,9 +3037,7 @@ body{
     
 }
 @media(max-width:360px){
-    .nav{
-        width: 324px;
-    }
+    
     .videoTutorial-images__item{
         width: 150px;
     }
@@ -3148,15 +3047,6 @@ body{
     .sardorQodirov{
         width: 324px;
         height: 190px;
-        margin-left:-30px;
     }
-    .fixedNav{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 20;
-        margin-top: 0;
-        border-radius: 0;
-    }
+ 
 }
