@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "nuxt-swiper": "^1.1.0",
     "pinia": "^2.0.36",
     "swiper": "^9.3.2",
     "vue": "^3.3.2",
