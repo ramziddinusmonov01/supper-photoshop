@@ -289,11 +289,13 @@
               <li class="using-list__item">DIzaynerlikni o‘rganmoqchi bo‘lganlar</li>
               <li class="using-list__item">Tajribasini oshirmoqchi dizaynerlar</li>
               <li class="using-list__item">SMM agentliklari, talabalar, motion dizaynerlar</li>
-              <li class="using-list__item">angi bilimlarni o‘zlashtirmoqchi bo‘lganlar</li>
+              <li class="using-list__item">Yangi bilimlarni o‘zlashtirmoqchi bo‘lganlar</li>
             </ul>
           </div>
-          <swiper class="using-info__slide" :slides-per-view="1"  :space-between="20" loop="true" @swiper="onSwiper"
-            @slideChange="onSlideChange"
+          <swiper class="using-info__slide" :modules="modules" :slides-per-view="1"  :space-between="20" loop="true" :autoplay="{
+                delay: 3000,
+                
+              }"
            >
             <swiper-slide class="using-slide__item">
               <img class="using-img" src="@/assets/images/using-img.png" alt="using-img">
@@ -329,8 +331,9 @@
           <img class="bonus-img" src="@/assets/images/header-man.png" alt="man-img">
           <h1 class="bonus-title"><span>BONUS!</span> “Photoshop Effekt” videodarslari</h1>
           <div class="bonus-info">
-            <swiper class="using-info__slide" :slides-per-view="1" :space-between="20" loop="true" @swiper="onSwiper"
-              @slideChange="onSlideChange">
+            <swiper class="using-info__slide"  :modules="modules" :slides-per-view="1" :space-between="20" loop="true" :autoplay="{
+                delay: 3000,
+              }">
               <swiper-slide>
                 <img class="bonus-info__img" src="@/assets/images/bonus-img.png" alt="bonus-img">
               </swiper-slide>
@@ -406,8 +409,9 @@
             </div>
           </div>
           <div class="author-imgs">
-            <swiper class="author-imgs__swiper" :slides-per-view="1" :space-between="20" loop="true" @swiper="onSwiper"
-              @slideChange="onSlideChange">
+            <swiper class="author-imgs__swiper" :modules="modules" :slides-per-view="1" :space-between="20" loop="true" :autoplay="{
+                delay: 3000,
+              }">
               <swiper-slide class="author-swiper__slide">
                 <img class="auhtor-img__img" src="@/assets/images/author-img.png" alt="bonus-img">
               </swiper-slide>
@@ -549,7 +553,9 @@
               </div>
             </li>
           </ul>
-          <swiper class="media-list " :slides-per-view="1" :space-between="50" :pagination="{ clickable: true }" :modules="modules">
+          <swiper class="media-list " :slides-per-view="1" :space-between="50" :pagination="{ clickable: true }" :modules="modules" :autoplay="{
+                delay: 3000,
+              }">
             <swiper-slide class="comments-list__item">
               <img class="comments-item__img" src="@/assets/images/Djanibek-Amanbaev.svg" alt="img">
               <div class="comments-item__info">
@@ -707,7 +713,6 @@
         </div>
         <!-- SERTIFICATE END -->
       </div>
-      <router-view></router-view>
     </div>
   </template>
   
@@ -715,11 +720,11 @@
 
   let inputName = ref("")
   let inputNumber = ref("")
-  import { Pagination } from 'swiper';
+  import { Pagination, Autoplay } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   
   import { ref } from 'vue';
-  const modules = [ Pagination ]
+  const modules = [ Pagination, Autoplay]
   const  congratulation = ref(false)
   
   // NAVIGATION FIXED
