@@ -584,9 +584,11 @@ body{
     margin-bottom: 24px;
     text-align: center;
 }
-.bonus-title span{
+.bonus-title  span{
     color: #2BC48A;
+    
 }
+
 .bonus-info {
     width: 100%;
     max-width: 1024px;
@@ -781,6 +783,26 @@ body{
     height: 30px;
     object-fit: contain;
 }
+.social-list__item:hover{
+    background-color: red;
+}
+.social-list__item:hover:nth-child(2){
+    background-color: blue;
+}
+.social-list__item a svg{
+    color: #D60000;
+}
+
+.social-list__item:nth-child(2) a svg{
+    color: #0071E3;
+}
+
+.social-list__item:hover svg path{
+    color: var(--white-color); 
+ }
+ .social-list__item:hover a {
+    color:#fff; 
+ }
 
 
 .youtube:hover{
@@ -2447,6 +2469,7 @@ body{
         height: 30px;
         object-fit: contain;
     }
+
     .sardorQodirov{
         width: 540px;
         height: 300px;
