@@ -144,6 +144,8 @@
             <div v-for="usingText in store.usingInfo?.data" :key="usingText.id">
               <h1 class="using-info__title">{{ usingText.title }}</h1> 
               <p class="using-list__item">{{ usingText.description }}</p>
+              <h1 class="using-info__title">{{ usingText.second_title }}</h1>
+              <p class="using-list__item">{{ usingText.second_description }}</p>
             </div>       
           </div>
           <swiper class="using-info__slide" :modules="modules" :slides-per-view="1"  :space-between="20" loop="true" :autoplay="{ delay: 3000,}">
