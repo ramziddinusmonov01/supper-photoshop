@@ -169,18 +169,12 @@
                 <img class="bonus-info__img" :src="bonusInfoImg.image" alt="bonus-img">
               </swiper-slide>
             </swiper>
-            <div class="bonus-info__text" v-for="bonusInfo in store.bonus?.data" :key="bonusInfo.id">
+            <div class="bonus-info__text" v-for="bonusInfo in store.bonus?.data.items" :key="bonusInfo.id">
               <h1 class="bonus-info__title">{{ bonusInfo.title }}</h1>
               <p class="bonus-list__item">{{ bonusInfo.description }}</p>
-              <h1 class="bonus-info__title">Mundarija:</h1>
+              <h1 class="bonus-info__title"> {{ store.bonus?.data.outline_title }} </h1>
               <ol class="bonus-info__list">
-                <li class="bonus-list__item">iPhone uchun SMM dizayn (25 min)</li>
-                <li class="bonus-list__item">Apple Watch uchun poster dizayn (20 min) </li>
-                <li class="bonus-list__item">Game kanal uchun Youtube prevyu 1-dizayn (33 min)</li>
-                <li class="bonus-list__item">Youtube prevyu 2-dizayn (39 min) </li>
-                <li class="bonus-list__item">Yangiliklar kanali uchun prevyu 3-dizayn (34 min)</li>
-                <li class="bonus-list__item">Futbol kanali (250k) uchun 4-prevyu dizayn. Xayrulla Hamidov menejeri bilan
-                  muloqot (26 min)</li>
+                <li class="bonus-list__item" v-for="(item, index) in bonusInfo.outline.split(/\r?\n/)" :key="index"> {{ item }} </li>
               </ol>
             </div>
           </div>
@@ -195,7 +189,6 @@
             </a>
           </div>
         </div>
-  
         <!-- BONUS END -->
   
         <!-- AUTHOR -->
@@ -230,8 +223,6 @@
           </ul>
         </div>
 
-        
-  
         <!-- AUTHOR END -->
   
         <!--COMMENTS -->
@@ -390,11 +381,13 @@
   
   function registerModal() {
     const backgroundlinear = document.querySelector('.background-linear')
-    const registerModal = document.querySelector('.register-modal')
+    // const registerModal = document.querySelector('.register-modal')
     const inputNameError = document.querySelector('.registration-form__name');
     const inputNumberError = document.querySelector('.registration-form__number')
     if (inputName.value.length !== 0 && inputNumber.value.length !== 0) {
       congratulation.value = true
+      
+      
     } else {
         inputNameError.classList.add('registration-form__name--show')
         inputNumberError.classList.add('registration-form__name--show')
@@ -412,7 +405,6 @@
   
 
   // BACKGRUND LINEAR
-  
   function backgrounsClose() {
     const registerModal = document.querySelector('.register-modal')
     const modal = document.querySelector('.modal-nav');
