@@ -203,6 +203,7 @@
                 <div class="snow"></div>
                 <div class="snow"></div>
             </div>
+            <div class="congratulations-info">
             <div class="cheack-box">
                 <span></span>
                 <span></span>
@@ -215,6 +216,7 @@
                 <img src="@/assets/images/congratulations-telegram-icone.svg" alt="icone">
                 Telegram kanalimizga qo`shiling
             </a>
+          </div>
         </div>
     </div>
 </template>

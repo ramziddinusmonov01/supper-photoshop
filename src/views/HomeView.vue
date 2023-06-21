@@ -10,7 +10,7 @@
               <div class="nav-modal-options">
                 <ul class="nav-menu" v-for="nav in store.navbar" :key="nav.id">
                   <li class="nav-menu__item">
-                    <a class="nav-item__link" href="#mavzular">{{nav.category_name}}</a>
+                    <a class="nav-item__link" :href="`#` + nav.category_name">{{nav.category_name}}</a>
                   </li>
                 </ul>
                 <a class="nav-connection" href="#bizgaBoglanish">Bog‘lanish</a>
@@ -80,7 +80,7 @@
       <!-- VIDEO TUTORIAL -->
       <div class="container">
 
-        <div class="videoTutorial">
+        <div class="videoTutorial" :id="store.navbar[0].category_name">
           <div class="videoTutorial-info" v-for="headerInfo in store.headerSection?.data" :key="headerInfo.id">
             <h1 class="videoTutorial-info__title">
               {{ headerInfo.title }}
@@ -143,9 +143,13 @@
           <div class="using-info">
             <div v-for="usingText in store.usingInfo?.data" :key="usingText.id">
               <h1 class="using-info__title">{{ usingText.title }}</h1> 
-              <p class="using-list__item">{{ usingText.description }}</p>
+              <ul class="using-info__list">
+                <li class="using-list__item" v-for="(text, index) in usingText.description.split(/\r?\n/)" :key="index">{{ text }}</li>
+              </ul>
               <h1 class="using-info__title">{{ usingText.second_title }}</h1>
-              <p class="using-list__item">{{ usingText.second_description }}</p>
+              <ul class="using-info__list">
+                <li class="using-list__item" v-for="(second_desc, index) in usingText.second_description.split(/\r?\n/)" :key="index">{{ second_desc }}</li>
+              </ul>
             </div>       
           </div>
           <swiper class="using-info__slide" :modules="modules" :slides-per-view="1"  :space-between="20" loop="true" :autoplay="{ delay: 3000,}">
@@ -158,7 +162,7 @@
   
         <!-- BONUS -->
   
-        <div class="bonus" id="bonus" v-for="bonus in store.bonus?.data" :key="bonus.id">
+        <div class="bonus"  v-for="bonus in store.bonus?.data.items" :key="bonus.id" :id="store.navbar[1].category_name">
           <img class="bonus-img" src="@/assets/images/header-man.png" alt="man-img">
           <h1 class="bonus-title" v-html="bonus.main_title"></h1>
           <div class="bonus-info">
@@ -171,14 +175,16 @@
             </swiper>
             <div class="bonus-info__text" v-for="bonusInfo in store.bonus?.data.items" :key="bonusInfo.id">
               <h1 class="bonus-info__title">{{ bonusInfo.title }}</h1>
-              <p class="bonus-list__item">{{ bonusInfo.description }}</p>
+              <ul class="bonus-info__list">
+                <li class="bonus-list__item" v-for="(item, index) in bonusInfo.description.split(/\r?\n/)" :key="index">{{ item }}</li>
+              </ul>
               <h1 class="bonus-info__title"> {{ store.bonus?.data.outline_title }} </h1>
               <ol class="bonus-info__list">
                 <li class="bonus-list__item" v-for="(item, index) in bonusInfo.outline.split(/\r?\n/)" :key="index"> {{ item }} </li>
               </ol>
             </div>
           </div>
-          <div v-for="bonusLink in store.bonus?.data" :key="bonusLink.id">
+          <div v-for="bonusLink in store.bonus?.data.items" :key="bonusLink.id">
             <a class="bonus-btn bonus-desktop__btn" href="#bizgaBoglanish">
               {{ bonusLink.sign_up_link }}
               <img src="@/assets/images/arrow-right-solid.svg" alt="icone">
@@ -192,7 +198,7 @@
         <!-- BONUS END -->
   
         <!-- AUTHOR -->
-        <div class="author" id="muallifHaqida">
+        <div class="author" :id="store.navbar[2].category_name">
           <div class="author-info" v-for="authorInfo in store.authorAbout?.data" :key="authorInfo.id" >
             <h1 class="author-info__title">{{ authorInfo.title }}</h1>
             <p class="author-info__desc">{{ authorInfo.content }}</p>            
@@ -211,6 +217,7 @@
             </swiper>
           </div>
         </div>
+        <!-- NETWORK -->
         <div class="social-network">
           <h1 class="social-network__title">{{ store.socialNetwork?.data.social_network_title }}</h1>
           <ul class="social-network__list">
@@ -222,11 +229,12 @@
             </li>
           </ul>
         </div>
+        <!-- NETWORK END -->
 
         <!-- AUTHOR END -->
   
         <!--COMMENTS -->
-        <div class="comments">
+        <div class="comments" :id="store.navbar[3].category_name">
           <h1 class="comments-title" id="OquvchilarFikri">{{ store.pupilComenents?.data.comment_title }}</h1>
           <ul class="comments-list desktop-list">
             <li class="comments-list__item" v-for="comments in store.pupilComenents?.data.items" :key="comments.id">
@@ -252,9 +260,9 @@
         <!--COMMENTS  END-->
   
         <!-- PRICES -->
-        <div class="prices" id="narx">
-          <div class="prices-imgs">
-            <img class="prices-imgs__item" :src="store.coursePrice?.data.image" alt="man-img">
+        <div class="prices" >
+          <div class="prices-imgs" v-for=" img in store.coursePrice?.data" :key="img.id">
+            <img class="prices-imgs__item" :src="img.image" alt="man-img">
           </div>
           <div class="prices-info" v-for="price in store.coursePrice?.data" :key="price.id">
             <h1 class="prices-info__title">{{ price.title }}</h1>
@@ -277,17 +285,17 @@
             Ro‘yhatdan o‘ting va operator sizga tez orada aloqaga chiqadi. Sotib olishdan oldin <span>bepul darsni</span>
             sinab ko‘rishingiz mumkin.
           </p>
-          <form class="registration-form" action="">
+          <form class="registration-form" action="" >
             <input class="registration-form__name" type="text" v-model="inputName" required placeholder="Ismingiz"
               @click="inputNameTrue">
             <input class="registration-form__number" v-model="inputNumber" type="tel" required placeholder="+998901615131"
               @click="inputNameTrue">
               <div>
-                  <router-link to="/registerView" class="registration-form__btn" v-if="congratulation"  @click="registerModal">
+                  <!-- <router-link to="/registerView" class="registration-form__btn" >
                     Ro’yhatdan o‘tish
                     <img src="@/assets/images/arrow-right-solid.svg" alt="icone">
-                 </router-link>
-                 <button class="registration-form__btn" v-else  @click.prevent="registerModal">
+                 </router-link> -->
+                 <button class="registration-form__btn" @click.prevent="getContact" >
                      Ro’yhatdan o‘tish
                      <img src="@/assets/images/arrow-right-solid.svg" alt="icone">
                  </button>
@@ -296,14 +304,7 @@
         </div>
         <!-- REGISTRATION END -->
   
-        <!-- REGISTRATION MODAL -->
-        <div class="register-modal">
-          <img class="register-modal__img" src="@/assets/images/check.svg" alt="icone">
-          <h2 class="register-modal__title">Ro‘yhatdan o‘tganingiz uchun rahmat! Tez orada operatorimiz siz bilan
-            bog‘lanadi.</h2>
-          <button class="register-modal__btn" @click="backgrounsClose">OK</button>
-        </div>
-        <!-- REGISTRATION MODAL END -->
+
   
         <!-- CONNECTION  -->
   
@@ -344,11 +345,13 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue';
+  import { ref } from "vue";
   import {useCounterStore} from "@/stores/counter";
   import { Pagination, Autoplay } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   const store = useCounterStore();
+  const baseUrl = 'https://superphotoshop.uz/api';
+
   let inputName = ref("")
   let inputNumber = ref("")
 
@@ -414,6 +417,27 @@
     registerModal.classList.remove('register-modal--show')
     
   }
+
+
+
+  async function getContact() {
+ 
+    const response = await fetch(baseUrl + '/contact-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: inputName.value,
+        phone: inputNumber.value
+      })
+    });
+    console.log("qoshildi");
+
+}
+
+
+ 
 
   
   </script>

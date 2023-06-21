@@ -537,6 +537,7 @@ body{
     line-height: 29px;
     font-weight: 700;
     color: var(--dark-color);
+    margin-bottom: 24px;
 
 }
 .using-info__list {
@@ -544,6 +545,7 @@ body{
     flex-direction: column;
     gap: 10px;
     padding-left: 20px;
+    margin-bottom: 24px;
 }
 .using-list__item {
     font-size: 16px;
@@ -721,6 +723,10 @@ body{
 .author-imgs__swiper{
     width: 623px;
     height: 568px;
+    border-radius: 40px;
+}
+.author-swiper__slide{
+    border-radius: 40px;
 }
 
 
@@ -922,19 +928,12 @@ body{
     align-items: center;
 }
 
-.prices-imgs__item:nth-child(1){
-    display: flex;
-    width: 244px;
-    height: 405.01px;
-    object-fit: contain;
-    margin-bottom:-65px;
-    margin-right: -65px;
-}
 
 .prices-imgs__item{
     display: flex;
-    width: 328px;
-    height: 548px;
+    width: 100%;
+    max-width: 514px;
+    height: 490px;
     object-fit: contain;
 }
 
@@ -972,7 +971,7 @@ body{
 }
 .prices-info__btn {
     width: 100%;
-    max-width: 246px;
+    max-width: 257px;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -1217,11 +1216,19 @@ body{
 /* CONGRATULATION STYLES */
 .congratulation-container{
     display: flex;
-    padding-top:200px;
     align-items: center;
     height: 100vh;
     flex-direction: column;
 }
+.congratulations-info{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+
 .cheack-box {
     width: 150px;
     height: 150px;
