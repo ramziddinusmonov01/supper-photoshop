@@ -288,7 +288,7 @@
           <form class="registration-form" action="" >
             <input class="registration-form__name" type="text" v-model="inputName" required placeholder="Ismingiz"
               @click="inputNameTrue">
-            <input class="registration-form__number" v-model="inputNumber" type="tel" required placeholder="+998901615131"
+            <input class="registration-form__number" id="phoneInput" ref="phoneInput" v-model="inputNumber" type="tel" required placeholder="+998901615131"
               @click="inputNameTrue">
               <div>
                   <!-- <router-link to="/registerView" class="registration-form__btn" >
@@ -345,19 +345,33 @@
   </template>
   
   <script setup>
-  import { ref } from "vue";
+  import { ref , onMounted } from "vue";
   import {useCounterStore} from "@/stores/counter";
   import { Pagination, Autoplay } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
+  import IMask from "imask";
   const store = useCounterStore();
   const baseUrl = 'https://superphotoshop.uz/api';
-
+  let phoneMask
   let inputName = ref("")
   let inputNumber = ref("")
 
   const modules = [ Pagination, Autoplay]
   const  congratulation = ref(false)
-  
+  onMounted(() => {
+    phoneMask = new IMask(
+      document.getElementById('phoneInput'),
+      {
+        mask: '+{998} (00) 000-00-00',
+        prepare: (appended, masked) => {
+          if (appended === '8' && masked.value === '') {
+            return ''
+          }
+          return appended
+        }
+      }
+    )
+  })
   // NAVIGATION FIXED
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('.nav');
