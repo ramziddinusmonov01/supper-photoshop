@@ -295,6 +295,7 @@
                     Ro’yhatdan o‘tish
                     <img src="@/assets/images/arrow-right-solid.svg" alt="icone">
                  </router-link> -->
+                 <!-- register -->
                  <button class="registration-form__btn" @click.prevent="getContact" >
                      Ro’yhatdan o‘tish
                      <img src="@/assets/images/arrow-right-solid.svg" alt="icone">
