@@ -191,24 +191,16 @@ body{
     transform: rotate(-45deg);
 }
 .modal-nav__menu {
-    width: 245px;
-    height: 200px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-    background-color: var(--white-color);
-    margin-bottom: 32px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-    list-style: none;
+  background-color: white;
+  margin-bottom: 30px;
 }
+
 .modal-menu__item a {
     width: 100%;
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px 24px;
-    border: 1px solid #F2F2F2FF;
     cursor: pointer;
     transition: 0.1s linear;
     font-size: 14px;
@@ -217,6 +209,24 @@ body{
     text-decoration: none;
 
 }
+.modal-menu__item {
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+    background-color: var(--white-color);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    
+}
+
+.modal-menu__item:not(:last-child){
+    border-bottom: 1px solid gray;
+
+}
+
+
 .modal-menu__item a:nth-child(1){
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -871,13 +881,13 @@ body{
 .comments-list__item {
     width: 100%;
     max-width: 623.5px;
-    height: 170px;
+    height: auto;
     padding: 24px 32px;
     background-color: var(--white-color);
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 24px;
 }
 .comments-item__img {
@@ -1333,8 +1343,6 @@ body{
         height: 80px;
     }
 }
-
-
 @media(max-width:1366px){
     .container{
         padding: 0 45px;
@@ -1358,13 +1366,11 @@ body{
 .comments-list__item {
     width: 100%;
     max-width: 550px;
-    height: 170px;
     padding: 20px 28px;
     background-color: var(--white-color);
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     display: flex;
-    align-items: center;
     gap: 24px;
 }
 /* AUTHOR STYLES */
@@ -1496,13 +1502,11 @@ body{
 .comments-list__item {
     width: 100%;
     max-width: 500px;
-    height: 170px;
     padding: 20px 25px;
     background-color: var(--white-color);
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     display: flex;
-    align-items: center;
     gap: 24px;
 }
 
@@ -1716,18 +1720,17 @@ body{
     margin: 0 auto;
 }
 .media-list{
-    display: none;
+    display: flex;
+    width: 100%;
 }
 .comments-list__item {
     width: 100%;
     max-width: 450px;
-    height: 170px;
     padding: 20px 20px;
     background-color: var(--white-color);
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
     border-radius: 20px;
     display: flex;
-    align-items: center;
     gap: 24px;
 }
 .coments-info__desc {
@@ -1735,10 +1738,7 @@ body{
     line-height: 19px;
     font-weight: 400;
     color: var(--text-color);
-    white-space: wrap;
-    overflow: auto;
-    text-overflow: ellipsis;
-    height: 90px;
+  
     }
 
 }
@@ -2025,14 +2025,26 @@ body{
     /* COMMENTS STYLES */
 
 .comments-list {
-    display: flex;
+    display: none;
     gap: 24px;
     align-items: center;
     justify-content: center;
 }
 .media-list{
-    display: none;
+    display: flex;
+    width: 100%;
 }
+.comments-list__item {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px 20px;
+    background-color: var(--white-color);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    display: flex;
+    gap: 24px;
+}
+
 
   /* AUTHOR STYLES */
   .author-imgs__swiper{
@@ -2084,7 +2096,7 @@ body{
     }
     .prices-info__btn {
         width: 100%;
-        max-width: 246px;
+        max-width: 255px;
         display: flex;
         align-items: center;
         gap: 5px;
@@ -2113,29 +2125,30 @@ body{
         margin: 0 auto;
     
     }
-}
-@media(max-width:980px){    
-    .prices-imgs__item:nth-child(1){
-        display: flex;
-        width: 200px;
-        height: 405.01px;
-        object-fit: contain;
-        margin-bottom:-50px;
-        margin-right: -50px;
-    }
-    
+
     .prices-imgs__item{
         display: flex;
-        width: 300px;
-        height: 548px;
+        width: 100%;
+        max-width: 450px;
+        height: 450px;
         object-fit: contain;
     }
 }
+
 @media(max-width:955px){
     .using-img{
         width: 100%;
         max-width: 360px;
         border-radius: 10px;
+    }
+}
+@media(max-width:924px){
+    .prices-imgs__item{
+        display: flex;
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+        object-fit: contain;
     }
 }
 @media(max-width:920px){
@@ -2152,6 +2165,34 @@ body{
     align-items: center;
     gap: 40px;
 }
+}
+@media(max-width:917px){
+    .nav-modal-options{
+        display: none;
+    }
+    .nav {
+        width: 100%;
+        max-width: 863px;
+        padding: 12px 0;
+        border-radius: 50px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    .fixedNav{
+        top: 50px;
+    }
+    
+    .nav-container{
+        justify-content: space-between;
+    }
+    
+    .nav-modal__btn{
+        display: flex;
+    }
+    .sardorQodirov{
+        width: 697px;
+        height: 500px;
+    }
 }
 @media(max-width:913px){
     .container{
@@ -2173,7 +2214,7 @@ body{
     }
     .topics-list__item {
         width: 100%;
-        max-width: 500px;
+        max-width: 900px;
         height: 148px;
         box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
         border-radius: 20px;
@@ -2298,35 +2339,7 @@ body{
     }
 
 }
-@media(max-width:899px){
-    .nav {
-        width: 100%;
-        max-width: 863px;
-        padding: 12px 0;
-        border-radius: 50px;
-        margin: 0 auto;
-        margin-top: 50px;
-    }
-    .fixedNav{
-        top: 50px;
-    }
-    
-    .nav-container{
-        justify-content: space-between;
-    }
-    .nav-modal-options{
-        display: none;
-    }
-    .nav-modal__btn{
-        display: flex;
-    }
-    .sardorQodirov{
-        width: 697px;
-        height: 500px;
-    }
 
-
-}
 @media(max-width:890px){
     .nav {
         width: 100%;
@@ -2781,7 +2794,6 @@ body{
         flex-direction: column;
         gap:10px;
         width: 324px;
-        height: 290px;
     }
 
 }
@@ -2798,9 +2810,7 @@ body{
     .desktop-list{
         display: none;
     }
-    .media-list{
-        display: flex;
-    }
+
   
     .sardorQodirov{
         width: 380px;

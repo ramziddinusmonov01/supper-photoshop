@@ -35,9 +35,9 @@
             <span></span>
           </div>
         </div>
-        <ul class="modal-nav__menu" v-for="modalNav in store.navbar" :key="modalNav.id">
-          <li class="modal-menu__item" @click="modalOpen">
-            <a href="#mavzular">
+        <ul class="modal-nav__menu" >
+          <li class="modal-menu__item" @click="modalOpen" v-for="modalNav in store.navbar" :key="modalNav.id">
+            <a :href="`#` + modalNav.category_name">
               {{ modalNav.category_name }}
               <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -245,7 +245,7 @@
               </div>
             </li>
           </ul>
-          <swiper class="media-list " :slides-per-view="1" :space-between="50" :pagination="{ clickable: true }" :modules="modules" :autoplay="{
+          <swiper class="media-list " :slides-per-view="1" :space-between="30" :pagination="{ clickable: true }" :modules="modules" :autoplay="{
                 delay: 3000,
               }">
             <swiper-slide class="comments-list__item" v-for="comments in store.pupilComenents?.data.items" :key="comments.id">
@@ -363,7 +363,7 @@
     phoneMask = new IMask(
       document.getElementById('phoneInput'),
       {
-        mask: '+{998} (00) 000-00-00',
+        mask: '{+998} (00) 000-00-00',
         prepare: (appended, masked) => {
           if (appended === '8' && masked.value === '') {
             return ''
