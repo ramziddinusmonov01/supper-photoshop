@@ -363,7 +363,7 @@
     phoneMask = new IMask(
       document.getElementById('phoneInput'),
       {
-        mask: '{+998} (00) 000-00-00',
+        mask: '+{998} (00) 000-00-00',
         prepare: (appended, masked) => {
           if (appended === '8' && masked.value === '') {
             return ''
