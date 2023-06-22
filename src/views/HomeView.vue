@@ -373,7 +373,7 @@
       }
     )
   })
-  // NAVIGATION FIXED
+  // NAVIGATION FIXEDs
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('.nav');
     nav.classList.toggle("fixedNav", window.scrollY > 0)
