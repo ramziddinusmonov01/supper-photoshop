@@ -260,7 +260,7 @@
         <!--COMMENTS  END-->
   
         <!-- PRICES -->
-        <div class="prices" >
+        <div class="prices" :id="store.navbar[4].category_name">
           <div class="prices-imgs" v-for=" img in store.coursePrice?.data" :key="img.id">
             <img class="prices-imgs__item" :src="img.image" alt="man-img">
           </div>
