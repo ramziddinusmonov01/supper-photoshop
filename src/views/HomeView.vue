@@ -359,17 +359,7 @@
   let phoneMask
   const modules = [ Pagination, Autoplay]
   const  congratulation = ref(false);
-  function sbmt() {
-    if (inputName.value.length != 0 && inputNumber.value.length != 0) {
-      congratulation.value = true
-      router.push('/registerView')
-    } else {
-      const inputNameError = document.querySelector('.registration-form__name');
-      const inputNumberError = document.querySelector('.registration-form__number')
-      inputNameError.classList.add('registration-form__name--show')
-      inputNumberError.classList.add('registration-form__name--show')   
-    }
-  }
+
   onMounted(() => {
     phoneMask = new IMask(
       document.getElementById('phoneInput'),
@@ -441,6 +431,15 @@
         phone: inputNumber.value
       })
     });
+    if (inputName.value.length != 0 && inputNumber.value.length != 0) {
+      congratulation.value = true
+      router.push('/registerView')
+    } else {
+      const inputNameError = document.querySelector('.registration-form__name');
+      const inputNumberError = document.querySelector('.registration-form__number')
+      inputNameError.classList.add('registration-form__name--show')
+      inputNumberError.classList.add('registration-form__name--show')   
+    }
     console.log("qoshildi");
 
 
