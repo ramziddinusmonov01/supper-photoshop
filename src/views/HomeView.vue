@@ -293,8 +293,8 @@
               <div>
                  <!-- register -->
 
-                 <button class="registration-form__btn" @click="getContact()">
-                     Ro’yhatdan o‘tish
+                 <button class="registration-form__btn" @click.prevent="getContact()">
+                     Ro’yhatdan o‘tishdsvs
                      <img src="@/assets/images/arrow-right-solid.svg" alt="icone">
                  </button>
                   
@@ -441,6 +441,7 @@
         phone: inputNumber.value
       })
     });
+    console.log("qoshildi");
 
 
 
