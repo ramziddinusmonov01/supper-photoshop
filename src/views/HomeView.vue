@@ -291,15 +291,14 @@
             <input class="registration-form__number" id="phoneInput" ref="phoneInput" v-model="inputNumber" type="tel" required placeholder="+998901615131"
               @click="inputNameTrue">
               <div>
-                  <!-- <router-link to="/registerView" class="registration-form__btn" >
-                    Ro’yhatdan o‘tish
-                    <img src="@/assets/images/arrow-right-solid.svg" alt="icone">
-                 </router-link> -->
                  <!-- register -->
-                 <button class="registration-form__btn" @click.prevent="getContact" >
-                     Ro’yhatdan o‘tish
+
+                 <button class="registration-form__btn" @click="sbmt()">
+                     Ro’yhatdan o‘tishdsvs
                      <img src="@/assets/images/arrow-right-solid.svg" alt="icone">
                  </button>
+                  
+                
             </div>
           </form>
         </div>
@@ -346,19 +345,31 @@
   </template>
   
   <script setup>
+  import { useRouter } from "vue-router";
   import { ref , onMounted } from "vue";
   import {useCounterStore} from "@/stores/counter";
   import { Pagination, Autoplay } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import IMask from "imask";
+  const router = useRouter()
   const store = useCounterStore();
   const baseUrl = 'https://superphotoshop.uz/api';
-  let phoneMask
   let inputName = ref("")
   let inputNumber = ref("")
-
+  let phoneMask
   const modules = [ Pagination, Autoplay]
-  const  congratulation = ref(false)
+  const  congratulation = ref(false);
+  function sbmt() {
+    if (inputName.value.length != 0 && inputNumber.value.length != 0) {
+      congratulation.value = true
+      router.push('/registerView')
+    } else {
+      const inputNameError = document.querySelector('.registration-form__name');
+      const inputNumberError = document.querySelector('.registration-form__number')
+      inputNameError.classList.add('registration-form__name--show')
+      inputNumberError.classList.add('registration-form__name--show')   
+    }
+  }
   onMounted(() => {
     phoneMask = new IMask(
       document.getElementById('phoneInput'),
@@ -373,7 +384,7 @@
       }
     )
   })
-  // NAVIGATION FIXEDs
+  // NAVIGATION FIXED
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('.nav');
     nav.classList.toggle("fixedNav", window.scrollY > 0)
@@ -394,25 +405,8 @@
       backgroundlinear.classList.add('background-linear--show')
     }
   }
-  
-  // REGISTER MODAL OPEN
-  
-  function registerModal() {
-    const backgroundlinear = document.querySelector('.background-linear')
-    // const registerModal = document.querySelector('.register-modal')
-    const inputNameError = document.querySelector('.registration-form__name');
-    const inputNumberError = document.querySelector('.registration-form__number')
-    if (inputName.value.length !== 0 && inputNumber.value.length !== 0) {
-      congratulation.value = true
-      
-      
-    } else {
-        inputNameError.classList.add('registration-form__name--show')
-        inputNumberError.classList.add('registration-form__name--show')
-        congratulation.value = true
+   
 
-    }
-  }
   function inputNameTrue() {
     const inputNameError = document.querySelector('.registration-form__name');
     const inputNumberError = document.querySelector('.registration-form__number')
@@ -447,9 +441,13 @@
         phone: inputNumber.value
       })
     });
-    console.log("qoshildi");
+
+
 
 }
+
+
+
 
 
  

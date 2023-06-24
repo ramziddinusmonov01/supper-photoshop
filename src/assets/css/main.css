@@ -799,64 +799,7 @@ body{
     height: 30px;
     object-fit: contain;
 }
-.social-list__item:hover{
-    background-color: red;
-}
-.social-list__item:hover:nth-child(2){
-    background-color: blue;
-}
-.social-list__item a svg{
-    color: #D60000;
-}
 
-.social-list__item:nth-child(2) a svg{
-    color: #0071E3;
-}
-
-.social-list__item:hover svg path{
-    color: var(--white-color); 
- }
- .social-list__item:hover a {
-    color:#fff; 
- }
-
-
-.youtube:hover{
-    background-color: #ff0000;
-}
-.youtube:hover a{
-    color: var(--white-color);
-}
-.youtube:hover a svg path{
-    fill: var(--white-color);
-}
-.telegram:hover{
-    background-color: #0071E3;
-}
-.telegram:hover a{
-    color: var(--white-color);
-}
-.telegram:hover a svg path{
-    fill: var(--white-color);
-}
-.instagram:hover{
-    background-color: #FF003D;
-}
-.instagram:hover a{
-    color: var(--white-color);
-}
-.instagram:hover a svg path{
-  fill: var(--white-color);
-}
-.behance:hover{
-    background-color: #0071E3;
-}
-.behance:hover a{
-    color: var(--white-color);
-}
-.behance:hover a svg path{
-    fill: var(--white-color);
-}
 
 
 /* COMMENTS STYLES */
