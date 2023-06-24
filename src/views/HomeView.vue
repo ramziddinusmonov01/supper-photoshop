@@ -154,7 +154,7 @@
           </div>
           <swiper class="using-info__slide" :modules="modules" :slides-per-view="1"  :space-between="20" loop="true" :autoplay="{ delay: 3000,}">
             <swiper-slide class="using-slide__item" v-for="usingInfoImg in store.usingImg?.data" :key="usingInfoImg.id">
-              <img :src="usingInfoImg.image" alt="icone">
+              <img class="using-slide-item__img" :src="usingInfoImg.image" alt="icone">
             </swiper-slide>
           </swiper>
         </div>

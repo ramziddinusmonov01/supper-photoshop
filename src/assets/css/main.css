@@ -574,7 +574,12 @@ body{
     width:100%;
     max-width: 464px;
 }
-
+.using-slide-item__img{
+    display: flex;
+    width: 464px;
+    height: 494px;
+    border-radius: 10px;
+}
 
 /* BONUS STYLES */
 .bonus {
@@ -800,9 +805,18 @@ body{
     object-fit: contain;
 }
 
+.social-list__item:hover{
+    background-color:#0071E3;
+}
+.social-list__item a svg path{
+    transition: 0.2s linear;
+}
+.social-list__item:hover a svg path{
+    fill: white;
+}
 
 
-/* COMMENTS STYLES */
+/* COMMENTS STYLES s*/
 .comments {
     margin:80px 0;
 }
@@ -1805,6 +1819,28 @@ body{
     filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.05));
     border-radius: 40px;
 }
+/* USING STYLES */
+.using {
+    width: 100%;
+    max-width: 1024px;
+    padding: 32px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin: 0 auto;
+
+
+}
+.using-slide-item__img{
+    display: flex;
+    width: 420px;
+    height: 494px;
+    border-radius: 10px;
+}
 }
 @media(max-width:1063px){
     /* AUTHOR STYLES */
@@ -1914,6 +1950,30 @@ body{
 }
 
 
+}
+@media(max-width:1028px){
+    /* USING STYLES */
+.using {
+    width: 100%;
+    max-width: 1024px;
+    padding: 32px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin: 0 auto;
+
+
+}
+.using-slide-item__img{
+    display: flex;
+    width: 400px;
+    height: 494px;
+    border-radius: 10px;
+}
 }
 @media(max-width:1015px){
     /* USING STYLES */
@@ -2076,6 +2136,36 @@ body{
         height: 450px;
         object-fit: contain;
     }
+        /* USING STYLES */
+.using {
+    gap: 20px;
+
+}
+
+}
+@media(max-width:970px){
+            /* USING STYLES */
+.using {
+    width: 100%;
+    max-width: 1024px;
+    padding: 32px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0 auto;
+
+
+}
+.using-slide-item__img{
+    display: flex;
+    width: 390px;
+    height: 450px;
+    border-radius: 10px;
+}
 }
 
 @media(max-width:955px){
@@ -2084,6 +2174,30 @@ body{
         max-width: 360px;
         border-radius: 10px;
     }
+}
+@media(max-width:945px){
+                /* USING STYLES */
+.using {
+    width: 100%;
+    max-width: 1024px;
+    padding: 32px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0 auto;
+
+
+}
+.using-slide-item__img{
+    display: flex;
+    width: 360px;
+    height: 450px;
+    border-radius: 10px;
+}
 }
 @media(max-width:924px){
     .prices-imgs__item{
@@ -2198,7 +2312,16 @@ body{
         margin-bottom: 24px;
         margin-left: 50px;
         
+        
     }
+                    /* USING STYLES */
+
+.using-slide-item__img{
+    display: flex;
+    width: 464px;
+    height: 494px;
+    border-radius: 10px;
+}
     /* BONUS STYLES */
 .bonus {
     margin-top: 64px;
@@ -2638,13 +2761,14 @@ body{
         width: 400px;
         height: 230px;
     }
-    .using-img {
+    .using-slide-item__img{
         display: flex;
         width: 392px;
         height: 311px;
         object-fit: cover;
-        margin-left: 40px;
+        margin: 0 auto;
       }
+
 }
 @media(max-width:555px){
     .using-img {
@@ -2831,12 +2955,12 @@ body{
         width: 380px;
         height: 200px;
     }
-    .using-img {
+    .using-slide-item__img{
         display: flex;
-        width: 292px;
+        width: 380px;
         height: 311px;
         object-fit: cover;
-        margin-left: 20px;
+        margin: 0 auto;
       }
 }
 @media(max-width:490px){
@@ -2848,6 +2972,15 @@ body{
         margin: 0 auto;
         margin-top: 50px;
     }
+}
+@media(max-width:483px){
+    .using-slide-item__img{
+        display: flex;
+        width: 292px;
+        height: 311px;
+        object-fit: cover;
+        margin: 0 auto;
+      }
 }
 @media(max-width:470px){
  
