@@ -293,7 +293,7 @@
               <div>
                  <!-- register -->
 
-                 <button class="registration-form__btn" @click="sbmt()">
+                 <button class="registration-form__btn" @click="getContact()">
                      Ro’yhatdan o‘tish
                      <img src="@/assets/images/arrow-right-solid.svg" alt="icone">
                  </button>
