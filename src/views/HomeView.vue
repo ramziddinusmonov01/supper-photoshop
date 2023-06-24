@@ -294,7 +294,7 @@
                  <!-- register -->
 
                  <button class="registration-form__btn" @click="sbmt()">
-                     Ro’yhatdan o‘tishdsvs
+                     Ro’yhatdan o‘tish
                      <img src="@/assets/images/arrow-right-solid.svg" alt="icone">
                  </button>
                   
