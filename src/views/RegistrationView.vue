@@ -212,7 +212,7 @@
             <p class="congratulations-desc">Ro'yhatdan o'tganingiz uchun rahmat! Tez orada operatorimiz siz bilan bog'lanadi!</p>
             <router-link class="congratulation-link-home" to="/">Bosh sahifaga qaytish</router-link>
             <p class="congratulations-heading">Bepul darslar kanaliga qo'shiling</p>
-            <a class="congratulation-link" href="https://t.me/kompyuter_grafika_darslari">
+            <a class="congratulation-link" href="https://t.me/YakubovGroup">
                 <img src="@/assets/images/congratulations-telegram-icone.svg" alt="icone">
                 Telegram kanalimizga qo`shiling
             </a>

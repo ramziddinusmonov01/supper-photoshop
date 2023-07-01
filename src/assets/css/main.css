@@ -498,15 +498,16 @@ body{
 }
 .topics-list__item:last-child{
     width: 100%;
+
 }
 .tool-tip{
     position:fixed;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     max-width: 700px;
-    height: 800px;
+    height: 700px;
     background: rgb(246, 240, 240);
     z-index: 20;
     padding: 10px 20px;
@@ -550,14 +551,16 @@ body{
     background: none;
     border: none;
     position: fixed;
-    top:100px;
-    right: 500px;
+    top:20px;
+    right: 20px;
     cursor: pointer;
     z-index: 100;
   }
   .Btn img{
     width: 50px;
     height: 50px;
+    z-index: 30;
+    position: fixed;
   }
 .tool-tip-enter-from{
     opacity: 0;
@@ -2263,7 +2266,6 @@ body{
     gap: 20px;
 
 }
-
 }
 @media(max-width:970px){
             /* USING STYLES */
@@ -2289,7 +2291,6 @@ body{
     border-radius: 10px;
 }
 }
-
 @media(max-width:955px){
     .using-img{
         width: 100%;
@@ -2628,6 +2629,13 @@ body{
         height: 300px;
     }
 
+    .tool-tip{
+        width: 100%;
+        max-width: 620px;
+  
+    
+    }
+
 }
 @media(max-width:713px){
     .nav {
@@ -2712,6 +2720,12 @@ body{
     .sardorQodirov{
         width: 540px;
         height: 300px;
+    }
+    .tool-tip{
+        width: 100%;
+        max-width: 580px;
+
+    
     }
 
 }
@@ -2832,6 +2846,12 @@ body{
         margin: 0 auto;
         margin-top: 50px;
     }
+    .tool-tip{
+        width: 100%;
+        max-width: 550px;
+
+    
+    }
 }
 @media(max-width:578px){
     .nav {
@@ -2890,6 +2910,12 @@ body{
         object-fit: cover;
         margin: 0 auto;
       }
+      .tool-tip{
+        width: 100%;
+        max-width: 500px;
+
+    
+    }
 
 }
 @media(max-width:555px){
@@ -3021,6 +3047,12 @@ body{
         width: 380px;
         height: 200px;
     }
+    .tool-tip{
+        width: 100%;
+        max-width: 450px;
+
+    
+    }
 }
 @media(max-width:508px){
     /* CONGRATULATION STYLES */
@@ -3137,6 +3169,14 @@ body{
 @media(max-width:465px){
     .using{
         padding: 20px;
+    }
+    .tool-tip{
+        width: 100%;
+        max-width: 400px;    
+    }
+    .topics-list__desc{
+        font-size: 15px;
+     
     }
 }
 @media(max-width:448px){
@@ -3328,6 +3368,16 @@ body{
         width: 324px;
         height: 190px;
     }
+    .tool-tip{
+        width: 100%;
+        max-width: 350px;    
+        height: 600px;
+    }
+    .Btn img{
+        width: 40px;
+        height: 40px;
+        right: 10px;
+    }
 
 }
 @media(max-width:410px){
@@ -3466,6 +3516,10 @@ body{
     .sardorQodirov{
         width: 324px;
         height: 190px;
+    }
+    .tool-tip{
+        width: 100%;
+        max-width: 330px;    
     }
  
 }

@@ -115,13 +115,15 @@
 
       <!--SARDOR QODIROV END  -->
 
-      <button class="Btn" v-if="openModalTopicItem" @click="openModalTopicItem = false, linear = false">
-        <img src="../assets/images/close-modal.svg" alt="icone">
-      </button>
       <!-- TOPICS TOOL TIP -->
+      
       <transition name="tool-tip" appear="">
+        <div class="container">
         <div class="tool-tip" v-if="openModalTopicItem">
           <div class="tool-tip__header">
+            <button class="Btn" v-if="openModalTopicItem" @click="openModalTopicItem = false, linear = false">
+              <img src="../assets/images/close-modal.svg" alt="icone">
+            </button>
           </div>
           <ul>
             <ol class="topics-list__desc" v-for="(topics, index) in modalTopicItemData.split(/\r?\n/)" :key="index">
@@ -130,6 +132,7 @@
           </ul>
             
         </div>
+      </div>
       </transition>
       <!-- TOPICS TOOL TIP END -->
 
@@ -139,12 +142,12 @@
         <img class="topics-img" src="@/assets/images/androir-mavzu.png" alt="girl">
         <h1 class="topics-title">“StartDroid - Android ilovalar” mavzulari</h1>
         <ul class="topics-list">
-          <li class="topics-list__item" v-for="(themes, i) in store.photoShopThemes?.data.items" :key="themes.id">
+          <li class="topics-list__item" v-for="(themes, i) in store.photoShopThemes?.data.items" :key="themes.id"  @click="updateModalTopicItem(i)">
             <div class="topics-item__info">
               <h3 class="topicsTitle" @click="topicsModal">{{ themes.title }}</h3>
             </div>
             <div class="topics-item__images">
-              <img class="topics-itemImg" @click="updateModalTopicItem(i)" :src="themes.image" alt="icone">
+              <img class="topics-itemImg" :src="themes.image" alt="icone">
             </div>
 
           </li>
