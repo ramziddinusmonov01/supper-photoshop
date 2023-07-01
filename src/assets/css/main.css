@@ -144,6 +144,8 @@ body{
     background-color: var(--body-bg);
     z-index: 21;
     transition: 0.2s linear;
+    display: flex;
+    flex-direction: column;
 }
 .modal-nav__header {
     display: flex;
@@ -258,7 +260,7 @@ body{
     background-color: var(--blue-color);
     color: var(--white-color);
     border-radius: 50px;
-    margin-bottom: 172px;
+    margin-bottom:auto;
     text-decoration: none;
     font-size: 14px;
     line-height: 16px;
