@@ -81,7 +81,7 @@
     <!-- VIDEO TUTORIAL -->
     <div class="container">
 
-      <div class="videoTutorial bg-red-500" :id="store.navbar[0].category_name">
+      <div class="videoTutorial" :id="store.navbar[0].category_name">
         <div class="videoTutorial-info" v-for="headerInfo in store.headerSection?.data" :key="headerInfo.id">
           <h1 class="videoTutorial-info__title">
             {{ headerInfo.title }}
@@ -102,7 +102,6 @@
         </div>
         <div class="vieoTutorial-images" v-for="headerImg in store.headerSection?.data" :key="headerImg.id">
           <img class="videoTutorial-images__item" :src="headerImg.first_img" alt="img">
-          <img class="videoTutorial-images__item" :src="headerImg.second_img" alt="img">
         </div>
       </div>
       <!-- VIDEO TUTORIAL END -->
@@ -189,7 +188,9 @@
       <!-- BONUS -->
 
       <div class="bonus" v-for="bonus in store.bonus?.data.items" :key="bonus.id" :id="store.navbar[1].category_name">
-        <img class="bonus-img" src="@/assets/images/bonus-img-man.png" alt="man-img">
+        <div class="bonus-img__box">
+          <img class="bonus-img" src="@/assets/images/bonus-1.jpg" alt="man-img">
+        </div>
         <h1 class="bonus-title" v-html="bonus.main_title"></h1>
         <div class="bonus-info">
           <swiper class="using-info__slide" :modules="modules" :slides-per-view="1" :space-between="20" loop="true"

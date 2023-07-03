@@ -337,7 +337,7 @@ body{
 .videoTutorial {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 60px;
     margin-top: 32px;
     background-color: var(--white-color);
     padding: 51px 60px;
@@ -428,15 +428,9 @@ body{
     width: 328px;
     height: 548px;
     object-fit: contain;
+    filter: drop-shadow(5px 5px 10px grey);
 }
-.videoTutorial-images__item:nth-child(1){
-    display: flex;
-    width: 240px;
-    height: 504px;
-    object-fit: contain;
-    margin-top: 50px;
-    margin-right: -65px;
-}
+
 
 
 .sardorQodirov {
@@ -497,6 +491,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
 }
 .topics-list__item:last-child{
     width: 100%;
@@ -581,16 +577,14 @@ body{
 
 
 
-.topics-item__info {
-    width: 100%;
-    max-width: 320px;
-}
+
 .topics-item__info h3{
     font-size: 24px;
     line-height: 29px;
     font-weight: 700;
     color: var(--dark-color);
     margin-bottom: 8px;
+ 
 }
 .topics-item__info p{
     font-size: 16px;
@@ -600,7 +594,8 @@ body{
 
 }
 .topics-item__images {
-    width: 100px;
+    width: 100%;
+    max-width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: #F5F5F7;
@@ -609,10 +604,13 @@ body{
     justify-content: center;
 }
 
-.topics-item__images img{
+.topics-itemImg{
     display: flex;
+    width: 64px;
+    height: 64px;
     cursor: pointer;  
     transition: 0.2s linear;
+    object-fit: contain;
 }
 .topics-item__images:hover img {
     opacity: 0.6;
@@ -692,12 +690,19 @@ body{
     margin-top: 64px;
     margin-bottom: 80px;
 }
+.bonus-img__box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
 .bonus-img {
     display: flex;
-    width: 247px;
-    height: 447px;
-    object-fit: contain;
-    margin: 0 auto;
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 .bonus-title {
     font-size: 32px;
