@@ -285,7 +285,7 @@
             :key="comments.id">     
               <img class="comments-item__img" :src="comments.image" alt="img">
             <div class="comments-item__info">
-              <p class="coments-info__desc">{{ comments.description }}</p>
+              <p class="coments-info__desc line-clamp-4">{{ comments.description }}</p>
               <h2 class="comments-info__title">{{ comments.name }}</h2>
             </div>
           </swiper-slide>
@@ -322,7 +322,7 @@
         <form class="registration-form" action="">
           <input class="registration-form__name" type="text" v-model="inputName" required placeholder="Ismingiz"
             @click="inputNameTrue">
-          <input class="registration-form__number" id="phoneInput" ref="phoneInput" v-model="inputNumber" type="tel"
+          <input class="registration-form__number" ref="phoneInput" id="phone" v-model="inputNumber" type="tel"
             required placeholder="+998901615131" @click="inputNameTrue">
           <div>
             <!-- register -->
@@ -391,10 +391,10 @@ const router = useRouter()
 const store = useCounterStore();
 const baseUrl = 'https://superphotoshop.uz/api';
 let inputName = ref("")
-let inputNumber = ref("")
-let phoneMask
+let inputNumber = ref("+998(")
 const modules = [Pagination, Autoplay]
 const congratulation = ref(false);
+const phoneInput = ref()
 
 let modalTopicItemData = ref('');
 let openModalTopicItem = ref(false);
@@ -409,20 +409,16 @@ function updateModalTopicItem(i){
 
 
 
+
 onMounted(() => {
-  phoneMask = new IMask(
-    document.getElementById('phoneInput'),
-    {
-      mask: '+{998} (00) 000-00-00',
-      prepare: (appended, masked) => {
-        if (appended === '8' && masked.value === '') {
-          return ''
-        }
-        return appended
-      }
-    }
-  )
-})
+  var maskOptions = {
+    mask: '+{998}(00) 000-00-00',
+    lazy: false
+  }
+  var mask = new IMask(phoneInput.value, maskOptions);
+
+
+});
 // NAVIGATION FIXED
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('.nav');
@@ -445,13 +441,11 @@ function modalOpen() {
   }
 }
 
-
 function inputNameTrue() {
   const inputNameError = document.querySelector('.registration-form__name');
   const inputNumberError = document.querySelector('.registration-form__number')
   inputNameError.classList.remove('registration-form__name--show')
   inputNumberError.classList.remove('registration-form__name--show')
-
 }
 
 
@@ -463,11 +457,7 @@ function backgrounsClose() {
   modal.classList.remove('modal-nav--show')
   backgroundlinear.classList.remove('background-linear--show')
   registerModal.classList.remove('register-modal--show')
-
-
 }
-
-
 
 async function getContact() {
 
@@ -490,24 +480,13 @@ async function getContact() {
     inputNameError.classList.add('registration-form__name--show')
     inputNumberError.classList.add('registration-form__name--show')
   }
-
-
-
 }
-
 
 function linearClose(){
   const linearBg = document.querySelector('.linear');
   openModalTopicItem.value = !openModalTopicItem.value;
   linear.value = false
 }
-
-
-
-
-
-
-
 
 
 </script>
